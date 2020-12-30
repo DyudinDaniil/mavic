@@ -1,3 +1,9 @@
-.main {
-  display: flex;
-}
+@import "normalize";
+@import "global";
+@import "vars";
+@import "libs";
+@import "fonts";
+
+
+
+@import "media";
