@@ -160,7 +160,7 @@
                 transform: translateY(25px);
             }
             &:nth-child(4) {
-                margin-left: 67px;
+                margin-left: 90px;
             }
             &:nth-child(odd) {
                 margin-left: 40px;
@@ -200,44 +200,279 @@
                 font-size: 15px;
                 line-height: 18px;
             }
+            &:nth-child(1),
+            &:nth-child(3) {
+                position: relative;
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                    background-repeat: no-repeat;
+                    background-position: 0 0;
+                }
+            }
+            &:nth-child(1) {
+                &::before {
+                    height: 46px;
+                    width: 245px;
+                    background-image: url(../images/line12.svg);
+                    top: 36px;
+                    right: -56px;
+                }
+            }
+            &:nth-child(3) {
+                &::before {
+                    height: 40px;
+                    width: 254px;
+                    background-image: url(../images/line34.svg);
+                    top: 50px;
+                    right: -95px;
+                }
+                &::after {
+                    height: 62px;
+                    width: 463px;
+                    background-image: url(../images/line23.svg);
+                    top: -76px;
+                    right: -54px;
+                }
+            }
         }
     }
-    &__item-one,
-    &__item-three {
+}
+
+.specification {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 50px;
+    }
+    &__item {
+        &-box {
+            width: 280px;
+            position: relative;
+            margin-top: 10px;
+            &::before {
+                content: '';
+                position: absolute;
+                background-repeat: no-repeat;
+                background-position: 0 0;
+            }
+            &-title {
+                font-size: 21px;
+                line-height: 28px;
+                @extend %ubuntu-bold;
+                margin-bottom: 10px;
+            }
+            &-text {
+                font-weight: 300;
+                font-size: 15px;
+                line-height: 18px;
+            }
+        }
+        &-box-two {
+            margin-top: 140px;
+        }
+        &-box-four {
+            margin-top: 160px;
+        }
+        &-box-one::before {
+            background-image: url(../images/pointer1.svg);
+            width: 229px;
+            height: 116px;
+            right: -155px;
+            top: 15px;
+        }
+        &-box-two::before {
+            background-image: url(../images/pointer2.svg);
+            width: 346px;
+            height: 81px;
+            top: -70px;
+            right: -320px;
+
+        }
+        &-box-three::before {
+            background-image: url(../images/pointer3.svg);
+            width: 258px;
+            height: 103px;
+            top: 15px;
+            left: -300px;
+        }
+        &-box-four::before {
+            background-image: url(../images/pointer4.svg);
+            width: 124px;
+            height: 89px;
+            top: -75px;
+            left: -150px;
+        }
+    }
+}
+
+.questions {
+    &__items {
+        max-width: 757px;
+        padding-bottom: 15px;
         position: relative;
-        &::before,
-        &::after {
+        &::before {
             content: '';
             position: absolute;
+            width: 319px;
+            height: 125px;
+            background-image: url(../images/mavicBg.png);
             background-repeat: no-repeat;
             background-position: 0 0;
+            bottom: 45px;
+            right: -319px;
+        }
+        &-item {
+            background-color: rgba(0, 0, 0, 0.3);
+            max-width: 690px;
+            margin-bottom: 5px;
+            &-title {
+                font-size: 21px;
+                line-height: 28px;
+                @extend %ubuntu-medium;
+                padding: 20px 10px 24px 39px;
+                color: rgba(#fff, .8);
+                position: relative;
+                cursor: pointer;
+                &::after {
+                    content: url(../images/qDOwn.svg);
+                    position: absolute;
+                    width: 72px;
+                    height: 67px;
+                    background-color: #fff;
+                    right: -72px;
+                    top: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            &-text {
+                display: none;
+                padding: 0 5px 75px 50px;
+                font-size: 15px;
+                line-height: 22px;
+            }
+        }
+
+        &-item.questions__items-item_active {
+            .questions__items-item-title::after {
+                transform: rotate(180deg);
+            }
+            .questions__items-item-text {
+                display: block;
+            }
         }
     }
-    &__item-one {
-        &::before {
-            height: 46px;
-            width: 245px;
-            background-image: url(../images/line12.svg);
-            top: 36px;
-            right: -56px;
+}
+
+.contacts {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 50px;
+        margin-bottom: 136px;
+    }
+    &__info {
+        text-align: left;
+        width: 240px;
+        &-box {
+            margin-bottom: 30px;
+            &-title {
+                font-size: 21px;
+                line-height: 24px;
+                @extend %ubuntu-bold;
+                margin-bottom: 13px;
+            }
+            &-phone,
+            &-email {
+                font-size: 15px;
+                line-height: 18px;
+            }
+            &-email:hover {
+                text-decoration: underline;
+            }
         }
     }
-    &__item-three {
-        &::before {
-            height: 40px;
-            width: 254px;
-            background-image: url(../images/line34.svg);
-            top: 50px;
-            right: -75px;
+    &__form {
+        width: 570px;
+        &-title {
+            font-size: 21px;
+            line-height: 24px;
+            @extend %ubuntu-bold;
+            margin-bottom: 13px;
         }
-        &::after {
-            height: 62px;
-            width: 463px;
-            background-image: url(../images/line23.svg);
-            top: -76px;
-            right: -54px;
+        &-text {
+            font-size: 15px;
+            line-height: 18px;
+            margin-bottom: 12px;
+        }
+        &-line-input,
+        &-textarea {
+            color: rgba(#fff, .4);
+            background: rgba(0, 0, 0, 0.5);
+            @extend %ubuntu-regular;
+            padding: 15px 0 15px 15px;
+            font-size: 13px;
+            line-height: 15px;
+            &::placeholder {
+                color: rgba(#fff, .4);
+            }
+        }
+        &-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            &-input {
+                width: 47%;
+            }
+        }
+        &-textarea {
+            min-height: 144px;
+            width: 98%;
+            resize: none;
+            margin-bottom: 20px;
+        }
+        &-btn {
+            color: #fff;
+            background-color: transparent;
+            padding: 9px 15px;
+            border: 1px solid #fff;
+            border-radius: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all .3s;
+            font-size: 14px;
+            line-height: 16px;
+            &:hover {
+                background: #fff;
+                color: #000;
+            }
         }
     }
+    &__social-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &-item {
+            margin-bottom: 14px;
+            opacity: 0.5;
+            transition: all .3s;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.footer {
+    text-align: right;
+    font-size: 13px;
+    line-height: 17px;
+    @extend %ubuntu-light;
+    opacity: .64;
 }
 
 @import "media";
