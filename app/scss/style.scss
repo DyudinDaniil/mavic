@@ -41,11 +41,17 @@
         @extend %ubuntu-bold;
     }
     &__menu {
+        &-btn {
+            display: none;
+        }
         &-list-item {
             display: inline-block;
             & + .header__menu-list-item {
                 padding-left: 20px;
             }
+        }
+        &-list-item_phone  {
+            display: none;
         }
     }
 }

@@ -9,4 +9,9 @@ $(function(){
         $('.questions__items-item').removeClass('questions__items-item_active');
         $(this).parent().addClass('questions__items-item_active');
     });
+
+   $('.header__menu-btn').on('click', function(){
+    $('.header__menu-btn').toggleClass('header__menu-btn_active');
+    $('.header__menu-list').toggleClass('header__menu-list_active');
+   });
 });
