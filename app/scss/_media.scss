@@ -3,16 +3,61 @@
         font-size: 16px;
         line-height: 22px;
     }
-    .top__title {
-        font-size: 75px;
-        line-height: 90px;
-        margin-bottom: 20px;        
+    .container {
+        max-width: 95vw;
     }
-    .top__img {
-        width: 80%;
+
+    .title {
+        font-size: 36px;
+        line-height: 42px;
+        margin-bottom: 42px;
+        padding-left: 0;
+        padding-top: 50px;
     }
-    .top__text {
-        margin: 15px 0 25px;
+    .about__inner {
+        padding: 0;
+    }
+    .about__slider-box {
+        padding: 0;
+    }
+    .about__slider-text {
+        display: none;
+    }
+    .benefits__items {
+        justify-content: space-between;
+        padding: 0;
+    }
+    .benefits__items-item {
+        width: 45%;
+        &:nth-child(1) {
+            &::before {
+                right: -116px;
+            }
+        }
+        &:nth-child(3) {
+            &::before {
+                right: -135px;
+            }
+            &::after {
+                right: -134px;
+            }
+        }
+    }
+    .benefits__items-item:nth-child(odd),
+    .benefits__items-item:nth-child(even) {
+        margin-left: 0;
+    }
+    .benefits__items-item-info, .benefits__items-item-title {
+        width: auto;
+    }
+
+    .specification__inner {
+        padding: 0;
+    }
+    .specification__item-box {
+        &::before {
+            display: none;
+        }
     }
 }
 
@@ -34,7 +79,7 @@
         justify-content: space-around;
         transform: translateY(-100%);
         transition: transform .5s;
-        &_active {
+        &--active {
             transform: translateY(0);
         }
     }
@@ -60,7 +105,7 @@
         width: 24px;
         height: 2px;
     }
-    .header__menu-btn.header__menu-btn_active {
+    .header__menu-btn.header__menu-btn--active {
         .header__menu-btn-line {
             opacity: 0;
         }
@@ -71,6 +116,14 @@
             transform: translateY(6px)rotate(135deg);
         }
     }
+    .header__menu-list-item {
+        padding-left: 20px;
+    }
+    .header__menu-list-item--phone {
+        display: block;
+        border-top: 1px solid rgba($color: #e0e0e0, $alpha: .4);
+        padding-top: 40px;
+    }
     .header__info-phone {
         display: none;
     }
@@ -80,19 +133,190 @@
     .top {
         align-items: center;
     }
-    .header__menu-list-item {
-        padding: 0;
-        padding-left: 24px;
+
+    .benefits__items-item {
+        &:nth-child(1) {
+            &::before {
+                display: none;
+            }
+        }
+        &:nth-child(3) {
+            &::before {
+                display: none;
+            }
+            &::after {
+                display: none;
+            }
+        }
     }
-    .header__menu-list-item_phone {
-        display: inline-block;
-        padding-top: 40px;
-        border-top: 1px solid rgba($color: #fff, $alpha: .24);
+
+    .specification__item:nth-child(2) {
+        margin: 0 -100px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .about__inner {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .about__text {
+        max-width: 100%;
+        margin-bottom: 60px;
+        text-align: center;
+    }
+
+    .benefits__items {
+        display: block;
+    }
+    .benefits__items-item {
+        width: 100%;
+        margin-bottom: 50px;
+        &:nth-child(even) {
+            transform: translateY(0);
+        }
+    }
+    .page-section {
+        min-height: 50vh;
+    }
+    .specification__item:nth-child(2) {
+        margin: 0 -150px;
+    }
+    .contacts__inner {
+        padding: 0;
+    }
+}
+
+@media (max-width: 960px) {
+    .about__slider::before {
+        display: none;
+    }
+    .specification__item:nth-child(2) {
+        margin: 0 -250px;
+    }
+    .questions__items {
+        max-width: 75%;
+        &-item {
+            max-width: 100%;
+        }
+    }
+    .questions__items-item-title {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .contacts__social-list {
+        display: none;
+    }
+    .contacts__info {
+        width: 30%;
+    }
+    .contacts__form {
+        width: 70%;
+    }
+}
+
+@media (max-width: 680px) {
+    .about__slider {
+        max-width: 95vw;
+        margin: 0 auto;
+        img {
+            width: 100%;
+        }
+    }
+    .title {
+        padding-top: 0;
+    }
+    .about__text {
+        margin-bottom: 30px;
+    }
+    .about__text {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .specification__inner {
+        display: block;
+    }
+    .specification__item:nth-child(2) {
+        display: none;
+    }
+    .specification__item-box {
+        width: 100%;
+        margin-top: 30px;
+    }
+    .questions__items {
+        max-width: 80%;
+        &::before {
+            display: none;
+        }
+    }
+    .questions__items-item-title {
+        font-size: 16px;
+        line-height: 18px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+    .questions__items-item-text {
+        padding: 0 5px 55px 30px;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .contacts__inner, 
+    .contacts__form-line {
+        display: block;
+    }
+    .contacts__info, 
+    .contacts__form,
+    .contacts__form-line-input {
+        width: 100%;
+    }
+    .contacts__form-line-input {
+        margin-bottom: 10px;
     }
 }
 
 @media (max-width: 520px) {
     .top__title {
         display: none;
+    }
+    .benefits__items-item-num {
+        display: none;
+    }
+    .benefits__items-item-title {
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .benefits__items-item-text {
+        font-size: 13px;
+        line-height: 16px;
+    }
+}
+
+@media (max-width: 380px) {
+    .about__slider-box {
+        margin-bottom: 62px;
+    }
+    .title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .benefits__items-item-img {
+        display: none;
+    }
+    .questions__items {
+        max-width: 75%;
+    }
+    .questions__items-item-title {
+        font-size: 12px;
+    }
+}
+
+@media (max-height: 880px) {
+    .top__title {
+        font-size: 72px;
+        line-height: 80px;
+        margin-bottom: 25px;
+    }
+    .top__img {
+        width: 100%;
     }
 }

@@ -6,12 +6,12 @@ $(function(){
     });
 
     $('.questions__items-item-title').on('click', function(){
-        $('.questions__items-item').removeClass('questions__items-item_active');
-        $(this).parent().addClass('questions__items-item_active');
+        $('.questions__items-item').removeClass('questions__items-item--active');
+        $(this).parent().addClass('questions__items-item--active');
     });
 
    $('.header__menu-btn').on('click', function(){
-    $('.header__menu-btn').toggleClass('header__menu-btn_active');
-    $('.header__menu-list').toggleClass('header__menu-list_active');
+    $('.header__menu-btn').toggleClass('header__menu-btn--active');
+    $('.header__menu-list').toggleClass('header__menu-list--active');
    });
 });
